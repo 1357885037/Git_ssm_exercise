@@ -24,7 +24,7 @@ public class BookController {
     public String query(){
         System.out.println("孟琦在测试");
         System.out.println("xxxxxxxxxxxxxxxxxxxxx成功！！！");
-        System.out.println("xxxxxxxxxxx测试！！！");
+        System.out.println("xxxxxxxxxxx第二次测试！！！");
         System.out.println(bookServiceImpl.list(null).size());
         return "/index.jsp";
     }
