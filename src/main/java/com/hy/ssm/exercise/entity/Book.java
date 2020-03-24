@@ -20,6 +20,7 @@ public class Book implements Serializable {
     private String zuoze;
     private BigDecimal price;
     private String jianjie;
+    private String abc;
 
     public String getNumber() {
         return number;
