@@ -16,20 +16,10 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String number;
-
     private String name;
-
     private String zuoze;
-
     private BigDecimal price;
-
     private String jianjie;
-
-    private Integer nid;
-
-    private String datebook;
-
-    private String img;
 
     public String getNumber() {
         return number;
@@ -66,29 +56,6 @@ public class Book implements Serializable {
     public void setJianjie(String jianjie) {
         this.jianjie = jianjie;
     }
-    public Integer getNid() {
-        return nid;
-    }
-
-    public void setNid(Integer nid) {
-        this.nid = nid;
-    }
-
-    public String getDatebook() {
-        return datebook;
-    }
-
-    public void setDatebook(String datebook) {
-        this.datebook = datebook;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
 
     @Override
     public String toString() {
@@ -98,9 +65,6 @@ public class Book implements Serializable {
         ", zuoze=" + zuoze +
         ", price=" + price +
         ", jianjie=" + jianjie +
-        ", nid=" + nid +
-        ", datebook=" + datebook +
-        ", img=" + img +
         "}";
     }
 }
