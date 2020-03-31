@@ -1,7 +1,7 @@
 package com.hy.ssm.exercise.service;
 
-import com.hy.ssm.exercise.entity.Book;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.hy.ssm.exercise.entity.users;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author mq
  * @since 2020-03-24
  */
-public interface IBookService extends IService<Book> {
+public interface IBookService extends IService<users> {
 
 }
