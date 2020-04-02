@@ -43,6 +43,7 @@
 
     <property name="filterChainDefinitions">
         <value>
+            /templeate/zuce.html=anon
             /exercise/book/zuce.do=anon
             /templeate/index.html=anon
             /exercise/book/login.do=anon

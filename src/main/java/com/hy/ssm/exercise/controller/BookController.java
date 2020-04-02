@@ -39,8 +39,9 @@ public class BookController {
 
     @RequestMapping("/query.do")
     public String query(){
-        System.out.println(bookServiceImpl.list(null).size());
-        return "/index.jsp";
+       // System.out.println(bookServiceImpl.list(null).size());
+        System.out.println("测试成功============================+++++++++++++");
+        return "xxx";
     }
 
     @RequestMapping("/login.do")
@@ -56,21 +57,20 @@ public class BookController {
             //捕获密码出现异常
             model.addAttribute("message","密码出现异常");
             System.out.println(subject.isAuthenticated());
-            return  "/index";
+            return  "/error";
         }catch (UnknownAccountException uae){
             //捕获未知用户名异常
             model.addAttribute("message","用户名出现异常");
              System.out.println("222");
-            return  "/index";
+            return  "/error";
         }catch (ExcessiveAttemptsException eae){
             //捕获错误登录多次的异常
             model.addAttribute("message","错误登录多次");
-            return  "/index";
+            return  "/error";
         }
-System.out.println("sssssssssssssssssssssssssssss");
+        model.addAttribute("user",username);
 
-
-        return "/query";
+        return "/index";
     }
 
 
