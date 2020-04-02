@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>qqqqqqqqqqqqqqqqqqqqqqqqqqqqq</h1>
+<shiro:user>
+    欢迎[<shiro:principal/>]登录<a href="#">退出</a>
+</shiro:user>
+
+<shiro:authenticted>
+        用户[<shiro:principal/>] 已身份验证通过
+</shiro:authenticted>
+
+<shiro:hashRole name="admin">
+    用户[<shiro:principal/>]拥有角色admin
+</shiro:hashRole>
+
+<shiro:hasAnyRoles name = "员工,老板">
+    用户[<shiro:pricipal/>]拥有角色员工 或者 老板
+</shiro:hasAnyRoles>
+ 
+<shiro:lacksRole name = "admin">
+    用户[<shiro:pricipal/>]没有角色admin
+</shiro:lacksRole>
+ 
+<a href="/exercise/book/admin/quanxian.do">权限测试</a>
+
+</body>
+</html>
