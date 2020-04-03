@@ -23,5 +23,31 @@ public class UsersJurisdictions implements Serializable {
 
     private String jId;
 
+    @Override
+    public String toString() {
+        return "UsersJurisdictions{" +
+                "uId='" + uId + '\'' +
+                ", jId='" + jId + '\'' +
+                '}';
+    }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getjId() {
+        return jId;
+    }
+
+    public void setjId(String jId) {
+        this.jId = jId;
+    }
 }

@@ -23,5 +23,31 @@ public class RolesJurisdiction implements Serializable {
 
     private String jId;
 
+    @Override
+    public String toString() {
+        return "RolesJurisdiction{" +
+                "rId='" + rId + '\'' +
+                ", jId='" + jId + '\'' +
+                '}';
+    }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getrId() {
+        return rId;
+    }
+
+    public void setrId(String rId) {
+        this.rId = rId;
+    }
+
+    public String getjId() {
+        return jId;
+    }
+
+    public void setjId(String jId) {
+        this.jId = jId;
+    }
 }

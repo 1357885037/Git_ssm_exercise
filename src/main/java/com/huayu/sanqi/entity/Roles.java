@@ -23,5 +23,31 @@ public class Roles implements Serializable {
 
     private String rName;
 
+    @Override
+    public String toString() {
+        return "Roles{" +
+                "rId='" + rId + '\'' +
+                ", rName='" + rName + '\'' +
+                '}';
+    }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getrId() {
+        return rId;
+    }
+
+    public void setrId(String rId) {
+        this.rId = rId;
+    }
+
+    public String getrName() {
+        return rName;
+    }
+
+    public void setrName(String rName) {
+        this.rName = rName;
+    }
 }
