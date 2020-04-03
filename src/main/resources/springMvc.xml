@@ -48,9 +48,6 @@
         <property name="templateEngine" ref="templateEngine"></property>
     </bean>
 
-
-
-
     <!--  开启 shiro权限注解-->
     <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
     <bean id="lifecycleBeanPostProcessor"  class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
@@ -64,9 +61,6 @@
     <bean  class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager" />
     </bean>
-
-
-
 
     <!-- 配置SpringMVC的异常解析器 -->
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -83,8 +77,8 @@
     </bean>
 
     <!--  开启注解扫描-->
-    <context:component-scan  base-package="com.hy.ssm.exercise.controller" ></context:component-scan>
+    <context:component-scan  base-package="com.huayu.sanqi.controller" />
     <!--配置注解映射器和适配器-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven/>
 
 </beans>

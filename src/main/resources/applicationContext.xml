@@ -9,26 +9,27 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
 ">
-
+<!--    引入shiro文件-->
     <import resource="spring-shiro.xml"></import>
 
     <!--  开启注解扫描-->
-    <context:component-scan base-package="com.hy.ssm.exercise" ></context:component-scan>
+    <context:component-scan base-package="com.huayu.sanqi.service" ></context:component-scan>
+
+    <!--读取properties文件中的内容取值用EL表达式-->
+    <context:property-placeholder location="classpath:DB.properties"/>
 
     <!--配置数据源-->
-    <bean  id="dateSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-
-        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/books?characterEncoding=utf-8"></property>
-        <property name="user" value="root"></property>
-        <property name="password" value="root"></property>
+    <bean  id="dateSource" class="${dataSourcec3p0}">
+        <property name="driverClass" value="${driverClass}"></property>
+        <property name="jdbcUrl" value="${jdbcUrl}"></property>
+        <property name="user" value="${user}"></property>
+        <property name="password" value="${password}"></property>
     </bean>
 
     <!--配置mybatis stting-->
     <bean id="settings" class="org.apache.ibatis.session.Configuration">
         <property name="logImpl" value="org.apache.ibatis.logging.log4j.Log4jImpl"></property><!--配置日志系统-->
     </bean>
-
 
     <!--事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -38,13 +39,12 @@
     <!--开启注解事务管理器-->
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"></tx:annotation-driven>
 
-
     <!--Spring 整合mybatis-->
     <!-- Mybatis-plus MybatisSqlSessionFactoryBean  Mybatis SqlSessionFactoryBean-->
     <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dateSource"></property>
         <!--  <property name="configuration" ref="settings"></property>-->
-        <property name="typeAliasesPackage" value="com.hy.ssm.exercise.entity"></property>
+        <property name="typeAliasesPackage" value="com.huayu.sanqi.entity"></property>
         <property name="configLocation" value="classpath:Mybatis.xml"></property>
         <!--插件分页-->
         <property name="plugins">
@@ -74,10 +74,8 @@
 
     <!--批量扫描Mapper-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hy.ssm.exercise.mapper"></property>
+        <property name="basePackage" value="com.huayu.sanqi.mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
-
-    <!--<bean id="bookServiceImpl" class="com.hy.ssm.exercise.service.impl.BookServiceImpl"></bean>-->
 
 </beans>

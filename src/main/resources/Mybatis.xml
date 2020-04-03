@@ -7,7 +7,7 @@
 
     <settings>
         <setting name="logImpl" value="LOG4J"/>
-        <setting name="cacheEnabled" value="true"></setting>  <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="false"></setting>  <!--开启二级缓存-->
     </settings>
 
 </configuration>
