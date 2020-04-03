@@ -3,7 +3,6 @@ package com.huayu.sanqi.shiro;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.huayu.sanqi.entity.Users;
 import com.huayu.sanqi.service.IUsersService;
-import com.hy.ssm.lanxin.entity.Accounts;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -51,7 +50,7 @@ public class ShiroRealm extends AuthorizingRealm {
       }
         ByteSource byteSource = ByteSource.Util.bytes(username);
       System.out.println(users.getUpass());
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(accounts.getAname(),accounts.getApass(),byteSource,getName());
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(users.getuName(),users.getUpass(),byteSource,getName());
         return authenticationInfo;
     }
 
