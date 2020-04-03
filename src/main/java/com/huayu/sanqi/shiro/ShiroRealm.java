@@ -50,7 +50,7 @@ public class ShiroRealm extends AuthorizingRealm {
           throw new UnknownAccountException("未知账号！");
       }
         ByteSource byteSource = ByteSource.Util.bytes(username);
-      System.out.println(users.getuPass()+"455");
+      System.out.println(users.getUpass());
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(accounts.getAname(),accounts.getApass(),byteSource,getName());
         return authenticationInfo;
     }
